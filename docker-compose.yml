@@ -1,0 +1,22 @@
+version: '3'
+services:
+  server:
+    build:
+      context: .
+      dockerfile: ./apps/api1/local.dockerfile
+    volumes:
+      - ./:/usr/src/ob_back
+    ports:
+      - '3000:3000'
+    command: nest start --watch api1
+    env_file:
+      - .env
+    networks:
+      ob_net:
+        ipv4_address: 172.16.25.3
+networks:
+  ob_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.16.25.0/24

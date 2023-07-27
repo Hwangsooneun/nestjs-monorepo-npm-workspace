@@ -1,0 +1,43 @@
+{
+  "name": "nestjs-mono",
+  "version": "0.0.1",
+  "description": "",
+  "author": "",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {},
+  "dependencies": {
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {},
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": ".",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "./coverage",
+    "testEnvironment": "node",
+    "roots": [
+      "<rootDir>/apps/",
+      "<rootDir>/libs/"
+    ],
+    "moduleNameMapper": {
+      "^lib/parameter-store(|/.*)$": "<rootDir>/libs/parameter-store/src/$1",
+      "^lib/ob-mailer(|/.*)$": "<rootDir>/libs/ob-mailer/src/$1"
+    }
+  },
+  "workspaces": [
+    "apps/*",
+    "libs/*"
+  ]
+}

@@ -1,0 +1,23 @@
+FROM node:18-alpine as builder
+
+WORKDIR /usr/src/ob_back
+
+COPY package*.json ./
+
+COPY . .
+
+RUN npm i -g @nestjs/cli@10.1.4
+RUN npm i -w api1
+RUN npm i -w libs
+RUN nest build api1
+
+FROM node:18-alpine as runner
+
+COPY --from=builder /usr/src/ob_back/package.json ./package.json
+COPY --from=builder /usr/src/ob_back/node_modules ./node_modules
+COPY --from=builder /usr/src/ob_back/tsconfig.json ./tsconfig.json
+COPY --from=builder /usr/src/ob_back/dist ./dist
+
+CMD NODE_ENV=production node ./dist/apps/api1/main.js
+
+EXPOSE 3000
