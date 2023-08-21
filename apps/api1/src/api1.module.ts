@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { Api1Controller } from './api1.controller';
 import { Api1Service } from './api1.service';
-import { ObMailerModule } from 'lib/ob-mailer';
+import { ObMailerModule } from '@orangeboard/share';
 
 @Module({
   imports: [ObMailerModule],

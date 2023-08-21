@@ -5,12 +5,22 @@
   "author": "",
   "private": true,
   "license": "UNLICENSED",
-  "scripts": {},
+  "scripts": {
+    "build:api1": "nx build api1",
+    "build:api2": "nx build api2",
+    "start:api1": "nx start:dev api1",
+    "start:api2": "nx start:dev api2",
+    "prod:api1": "nx start:prod api1",
+    "prod:api2": "nx start:prod api2"
+  },
   "dependencies": {
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nx": "16.7.2",
+    "nx-cloud": "latest"
+  },
   "jest": {
     "moduleFileExtensions": [
       "js",

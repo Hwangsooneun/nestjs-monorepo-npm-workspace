@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { ObMailerService } from 'lib/ob-mailer';
+import { ObMailerService } from '@orangeboard/share';
 
 @Injectable()
 export class Api1Service {

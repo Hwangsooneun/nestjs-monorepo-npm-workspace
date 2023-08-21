@@ -16,12 +16,6 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false,
-    "paths": {
-      "lib/parameter-store": ["libs/parameter-store/src"],
-      "lib/parameter-store/*": ["libs/parameter-store/src/*"],
-      "lib/ob-mailer": ["libs/ob-mailer/src"],
-      "lib/ob-mailer/*": ["libs/ob-mailer/src/*"]
-    }
+    "noFallthroughCasesInSwitch": false
   }
 }
